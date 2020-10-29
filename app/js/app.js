@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   generateQuote();
+  particlesJS.load('particles', 'assets/particles-config.json');
 
   document.querySelector('.lang-switch__button_en').onclick = (() => {
     currentLanguage = 'en';
@@ -26,6 +27,11 @@ function generateQuote() {
 
 function renderQuote(res) {
   document.getElementById('quote').innerText = res.quoteText;
-  document.getElementById('author').innerText = res.quoteAuthor;
+  let author = '';
+  if (res.quoteAuthor !== "") {
+    document.getElementById('author').innerText = "— " + res.quoteAuthor;
+    document.getElementById('author').style.display = 'block';
+  }
+  else document.getElementById('author').style.display = 'none';
 }
 
