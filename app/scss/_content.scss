@@ -3,7 +3,10 @@
 .content {
   background-color: #00000075;
   padding: 5% 15%;
-  width: 70vw;
+  justify-self: center;
+  align-self: center;
+  height: fit-content;
+  width: 100%;
 
   .content__quote {
     text-align: justify;
@@ -11,6 +14,21 @@
 
   .content__author {
     text-align: right;
+    padding-top: 5%;
+    font-style: italic;
+  }
+}
+
+@media screen and (max-width: $mobile-max-breakpoint) {
+  .content {
+    padding: 5% 10%;
+  }
+}
+
+
+@media screen and (max-height: 380px) {
+  .content {
     padding-top: 2%;
+    padding-bottom: 2%;
   }
 }

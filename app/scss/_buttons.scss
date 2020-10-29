@@ -1,9 +1,10 @@
 @import "variables";
 
 .buttons {
-  padding: 5% 0;
+  //padding: 5% 0;
+  align-self: center;
   width: 100%;
-  //margin: 0 auto;
+  justify-self: stretch;
   display: flex;
   justify-content: space-around;
 
@@ -38,5 +39,12 @@
 
   .button:focus {
     outline: none;
+  }
+
+  .buttons__twit-button {
+    display: flex;
+    .buttons__twit-button_twitter-icon {
+      margin: auto;
+    }
   }
 }

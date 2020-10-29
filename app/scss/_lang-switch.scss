@@ -1,17 +1,34 @@
+@import 'variables';
+
 .lang-switch {
-  position: relative;
-  //top: 10%;
-  //right: 10%;
+  padding: 4%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
   * {
     margin-left: 30px;
   }
+
   .lang-switch__button {
     width: 30px;
+    height: 30px;
     cursor: pointer;
     filter: brightness(75%);
+    -webkit-tap-highlight-color: transparent;
   }
 
   .lang-switch__button_active {
     filter: none;
+  }
+}
+
+@media screen and (max-width: $mobile-max-breakpoint) {
+  .lang-switch {
+    align-content: center;
+
+    .lang-switch__button {
+      width: 45px;
+    }
   }
 }
