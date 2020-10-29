@@ -1,0 +1,11 @@
+.lang-switch {
+  .lang-switch__button {
+    width: 30px;
+    cursor: pointer;
+    filter: brightness(75%);
+  }
+
+  .lang-switch__button_active {
+    filter: none;
+  }
+}
