@@ -1,0 +1,40 @@
+@import "variables";
+
+.container {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: grid;
+  grid-template-rows: 25% 50% 25%;
+  height: 100%;
+  max-width: 1680px;
+  width: 100%;
+ // min-height: 350px;
+
+  color: white;
+  font-size: 1.5em;
+  font-weight: 100;
+  letter-spacing: .1em;
+  font-family: $font-family-source-sans-pro;
+
+  .lang-switch {
+    justify-self: right;
+    padding: 4%;
+    width: 100%;
+
+  }
+
+  .content {
+    justify-self: center;
+    align-self: center;
+    height: fit-content;
+    width: 100%;
+
+  }
+
+  .buttons {
+    justify-self: stretch;
+    width: 100%;
+
+  }
+}

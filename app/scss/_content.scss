@@ -1,6 +1,16 @@
 @import "variables";
 
 .content {
-  border: 2px solid darkgrey;
-  border-radius: 8px;
+  background-color: #00000075;
+  padding: 5% 15%;
+  width: 70vw;
+
+  .content__quote {
+    text-align: justify;
+  }
+
+  .content__author {
+    text-align: right;
+    padding-top: 2%;
+  }
 }
