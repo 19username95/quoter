@@ -4,7 +4,7 @@
 
   .loader__body {
 
-    .loader-wrapper{
+    .loader__wrapper{
       position: absolute;
       top: 50%;
       left: 50%;
@@ -12,15 +12,15 @@
       width:59px;
       height: 40px;
     }
-    .loader{
+    .loader__part_1{
       width:59px;
       height: 40px;
       top: 0;
       left: 0;
       position: absolute;
     }
-    .roller,
-    .roller:last-child{
+    .loader__roller,
+    .loader__roller:last-child{
       width: 28px;
       height: 28px;
       position: absolute;
@@ -33,7 +33,7 @@
       animation: rollercoaster $loader-duration $loader-iteration-count linear;
       transform: rotate(135deg);
     }
-    .roller:last-child{
+    .loader__roller:last-child{
       left: auto;
       right: 0;
       -webkit-transform: rotate(-45deg);
@@ -43,8 +43,8 @@
       transform: rotate(-45deg);
       animation: rollercoaster2 $loader-duration $loader-iteration-count linear;
     }
-    .roller:before,
-    .roller:last-child:before{
+    .loader__roller:before,
+    .loader__roller:last-child:before{
       content:"";
       display:block;
       width: 6px;
@@ -168,15 +168,15 @@
       100%  { transform: rotate(-405deg);}
     }
 
-    #loader2 {
-      .roller{
+    #loader__part_2 {
+      .loader__roller{
         -webkit-animation-delay: 0.15s;
         animation-delay: 0.15s;
       }
     }
 
-    #loader3 {
-      .roller{
+    #loader__part_3 {
+      .loader__roller{
         -webkit-animation-delay: 0.3s;
         animation-delay: 0.3s;
       }
