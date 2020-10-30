@@ -1,3 +1,11 @@
 *, *::after, *::before {
   box-sizing: border-box;
 }
+
+body {
+  margin: 0;
+  overflow: scroll;
+  height: 100%;
+  width: 100%;
+  user-select: none;
+}

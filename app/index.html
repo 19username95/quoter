@@ -1,35 +1,78 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/styles.min.css">
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.min.js"
-      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-      crossorigin="anonymous"></script>
-    <script defer src="js/constants.js"></script>
-    <script defer src="js/services/quote.js"></script>
-    <script defer src="js/scripts.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic">
+  <script
+    src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script defer src="js/constants.js"></script>
+  <script defer src="js/services/quote.js"></script>
+  <script defer src="js/services/tweet.js"></script>
+  <script defer src="js/scripts.min.js"></script>
 </head>
 <body>
-    <section class="card">
+  <div id="particles" class="particles">
+    <section class="container">
       <div class="lang-switch">
-        <img src="img/en.svg" alt="" onclick="changeLanguage('en')" class="lang-switch__button lang-switch__button_en lang-switch__button_active">
-        <img src="img/ru.svg" alt="" onclick="changeLanguage('ru')" class="lang-switch__button lang-switch__button_ru ">
+        <img src="img/en.svg" alt="" onclick="changeLanguage('en')"
+             class="lang-switch__button lang-switch__button_en lang-switch__button_active">
+        <img src="img/ru.svg" alt="" onclick="changeLanguage('ru')"
+             class="lang-switch__button lang-switch__button_ru ">
       </div>
       <div class="content">
-        <div class="content__loader-box"></div>
+        <div class="content__loader loader" id="loader">
+          <div class="loader__body">
+            <div class="loader__wrapper">
+              <div class="loader__part_1">
+                <div class="loader__roller"></div>
+                <div class="loader__roller"></div>
+              </div>
+
+              <div id="loader__part_2" class="loader">
+                <div class="loader__roller"></div>
+                <div class="loader__roller"></div>
+              </div>
+
+              <div id="loader__part_3" class="loader">
+                <div class="loader__roller"></div>
+                <div class="loader__roller"></div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="content__quote" id="quote"></div>
         <div class="content__author" id="author"></div>
       </div>
       <div class="buttons">
-        <button class="buttons__generate-button" onclick="generateQuote()">Next</button>
-        <button class="buttons__twit-button">Tweet</button>
+        <button class="button buttons__generate-button" onclick="generateQuote()">Next</button>
+        <button class="button buttons__tweet-button" onclick="tweet()">
+          <svg class="buttons__tweet-button_twitter-icon"
+               width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.7386 5.1117C19.7525 5.32488 19.7525 5.53812 19.7525 5.7513C19.7525 12.2538
+          15.2157 19.7462 6.92386 19.7462C4.36928 19.7462 1.9962 18.9391 0 17.5381C0.362957
+          17.5838 0.711906 17.599 1.08883 17.599C3.19666 17.599 5.13704 16.8224 6.68654
+          15.4975C4.7043 15.4518 3.04313 14.0356 2.47079 12.0863C2.75 12.132 3.02917 12.1624
+          3.32234 12.1624C3.72715 12.1624 4.132 12.1015 4.50888 11.995C2.4429 11.5381 0.893363
+          9.5584 0.893363 7.16754V7.10665C1.49359 7.47213 2.19162 7.70055 2.93141
+          7.73098C1.71695 6.84771 0.921293 5.34012 0.921293 3.63452C0.921293 2.72084
+          1.1446 1.88327 1.53549 1.15231C3.75504 4.13707 7.09135 6.08627 10.8324 6.29951C10.7626
+          5.93402 10.7207 5.55335 10.7207 5.17263C10.7207 2.46195 12.7309 0.253853 15.2296
+          0.253853C16.5278 0.253853 17.7004 0.847759 18.524 1.80715C19.543 1.59396 20.5202
+          1.18277 21.3857 0.619337C21.0506 1.76149 20.3387 2.72088 19.4035 3.32998C20.3109
+          3.22343 21.1903 2.94926 21.9999 2.56859C21.3858 3.54316 20.618 4.41115 19.7386 5.1117Z"
+                fill="#FFFFFF"/>
+        </svg>
+        </button>
       </div>
     </section>
+  </div>
 </body>
 </html>

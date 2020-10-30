@@ -1,0 +1,29 @@
+@import "variables";
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  display: grid;
+  grid-template-rows: 25% 50% 25%;
+  height: 100%;
+  max-width: 1280px;
+  max-height: 800px;
+  width: 100%;
+
+  color: white;
+  font-size: 1.5em;
+  font-weight: 100;
+  letter-spacing: .1em;
+  font-family: $font-family-source-sans-pro;
+}
+
+@media screen and (max-width: $mobile-max-breakpoint) {
+  .container {
+    font-size: 1em;
+    letter-spacing: .01em;
+    grid-template-rows: 15% 60% auto;
+  }
+}

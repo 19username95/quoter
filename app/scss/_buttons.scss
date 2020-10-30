@@ -1,1 +1,50 @@
 @import "variables";
+
+.buttons {
+  //padding: 5% 0;
+  align-self: center;
+  width: 100%;
+  justify-self: stretch;
+  display: flex;
+  justify-content: space-around;
+
+  .button{
+    font-family: $font-family-source-sans-pro;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    height: 50px;
+    width: 100px;
+    letter-spacing: .2em;
+    //text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 100;
+    border-radius: 4px;
+    transition: 0.25s;
+  }
+
+  .button:hover {
+    font-weight: 300;
+  }
+
+  .button:hover {
+    animation: pulse 1s;
+    box-shadow: 0 0 0 10px rgba(#fff,0);
+
+  }
+
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 adjust-hue(#a5ffbb, 45deg); }
+  }
+
+  .button:focus {
+    outline: none;
+  }
+
+  .buttons__tweet-button {
+    display: flex;
+    .buttons__tweet-button_twitter-icon {
+      margin: auto;
+    }
+  }
+}
