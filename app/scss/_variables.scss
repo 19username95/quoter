@@ -8,3 +8,8 @@ $royal-gradient: linear-gradient(-45deg, #141E30, #243B55);
 // breakpoints
 $tablet-max-breakpoint: 1023px;
 $mobile-max-breakpoint: 767px;
+
+// loader
+$loader-duration: 1.5s;
+$loader-iteration-count: infinite;
+$loader-direction: normal;

@@ -4,7 +4,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
-// events
+const loader = document.getElementById("loader");
+const quote = document.getElementById("quote");
+const author = document.getElementById("author");
+
 document.querySelector('.lang-switch__button_en').onclick = (() => {
   currentLanguage = 'en';
   document.querySelector('.lang-switch__button_en').classList.add('lang-switch__button_active');
@@ -18,17 +21,17 @@ document.querySelector('.lang-switch__button_ru').onclick = (() => {
   generateQuote();
 });
 
-// fields
 let currentLanguage = 'en';
 let currentText = "";
 let currentAuthor = "";
 
-// methods
 function generateQuote() {
+  enableLoader();
   fetchQuote(currentLanguage)
     .then(res => {
       renderQuote(res)
-    });
+    })
+    .then(disableLoader);
 }
 
 function renderQuote(res) {
@@ -46,4 +49,15 @@ function renderQuote(res) {
 
 function tweet() {
   tweetQuote(currentText, currentAuthor);
+}
+
+function enableLoader () {
+  loader.hidden = false;
+  quote.hidden = true;
+  author.style.display = 'none';
+}
+function disableLoader () {
+  loader.hidden = true;
+  quote.hidden = false;
+  author.style.display = 'inherit';
 }
