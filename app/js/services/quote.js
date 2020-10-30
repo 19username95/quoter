@@ -4,7 +4,6 @@ function fetchQuote(language) {
     throw new Error(`Invalid language: ${language}`)
   }
   return $.ajax( `${API_URL}?method=getQuote&lang=${language}&format=json`).then(res => {
-    console.log(res);
     return res;
   });
 }
