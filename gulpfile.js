@@ -83,14 +83,14 @@ function startwatch() {
   watch([baseDir + '/js/**/*.js', '!' + paths.scripts.dest + '/*.min.js'], {usePolling: true}, scripts);
 }
 
+
+function deploy(cb) {
+  ghPages.publish(path.join(process.cwd(), './app'), cb);
+}
 exports.browsersync = browsersync;
 exports.styles      = styles;
 exports.scripts     = scripts;
 exports.images      = images;
 exports.cleanimg    = cleanimg;
 exports.default     = parallel(images, styles, scripts, browsersync, startwatch);
-
-function deploy(cb) {
-  ghPages.publish(path.join(process.cwd(), './app'), cb);
-}
 exports.deploy = deploy;
