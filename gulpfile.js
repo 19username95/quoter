@@ -3,7 +3,8 @@ const filesToWatch  = 'html,htm,txt,json,md,woff2'; // List of files extensions 
 const imagesToWatch = 'jpg,jpeg,png,webp,svg'; // List of images extensions for watching & compression (comma separated)
 const baseDir       = 'app'; // Base directory path without «/» at the end
 const isOnline      = true; // If «false» - Browsersync will work offline without internet connection
-
+const ghPages = require('gh-pages');
+const path = require('path');
 const paths = {
   scripts: {
     src: [
@@ -88,3 +89,8 @@ exports.scripts     = scripts;
 exports.images      = images;
 exports.cleanimg    = cleanimg;
 exports.default     = parallel(images, styles, scripts, browsersync, startwatch);
+
+function deploy(cb) {
+  ghPages.publish(path.join(process.cwd(), './app'), cb);
+}
+exports.deploy = deploy;
