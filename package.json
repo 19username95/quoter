@@ -1,12 +1,12 @@
 {
-  "name": "gulp-light-starter",
+  "name": "quoter",
   "version": "1.0.0",
-  "description": "Simple gulp configuration for fast project start",
+  "description": "Simple quote generator",
   "main": "app/index.html",
   "scripts": {
     "start": "gulp cleanimg && gulp"
   },
-  "author": "@anisimovv",
+  "author": "@19username95",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.12",
